@@ -1,13 +1,13 @@
 # Your Entrez email (NCBI uses this for contact / rate-limit stuff)
-ENTREZ_EMAIL = "q.zhao@uq.edu.au"
+ENTREZ_EMAIL = "XXX@XXX"
 
 # Optional API key (leave as "" if you don't want to use it)
-ENTREZ_API_KEY = "c30cf7cd83cd039975144c06f04ea4ad7708"
+ENTREZ_API_KEY = ""
 
 
 # Sleep between requests (seconds). Helps avoid rate-limits.
 # Suggest >=0.11 if you have API key, and >=0.34 if without API key
-SLEEP_TIME = 0.11
+SLEEP_TIME = 0.34
 
 
 # The year range to scan (both ends included)
