@@ -1,0 +1,81 @@
+# Your Entrez email (NCBI uses this for contact / rate-limit stuff)
+ENTREZ_EMAIL = "q.zhao@uq.edu.au"
+
+# Optional API key (leave as "" if you don't want to use it)
+ENTREZ_API_KEY = "c30cf7cd83cd039975144c06f04ea4ad7708"
+
+
+# Sleep between requests (seconds). Helps avoid rate-limits.
+# Suggest >=0.11 if you have API key, and >=0.34 if without API key
+SLEEP_TIME = 0.11
+
+
+# The year range to scan (both ends included)
+START_YEAR = 2000
+END_YEAR = 2025
+
+
+# Journals: left side is just a friendly label, right side is what PubMed expects in the [Journal] field
+JOURNALS = {
+    "Briefings in Bioinformatics": "Briefings in Bioinformatics",
+    "Bioinformatics": "Bioinformatics",
+    "Nature Methods": "Nat Methods",
+    "Nature Biotechnology": "Nat Biotechnol",
+    "Genome Research": "Genome Res",
+    "Genome Biology": "Genome Biol",
+    "Nucleic Acids Research": "Nucleic Acids Res",
+    "PLOS Computational Biology": "PLoS Comput Biol",
+}
+
+
+# Topics: key is your topic name, value is the PubMed query snippet (we'll use it in Title/Abstract when possible)
+TOPICS = {
+    "EST_or_microarray": (
+        "("
+        "('expressed sequence tag'[tiab] OR 'expressed sequence tags'[tiab])"
+        " OR "
+        "('microarray'[tiab] OR 'micro-array'[tiab])"
+        ")"
+    ),
+    "RNA-seq": (
+        "("
+        "'RNA-seq'[tiab] OR 'RNA-Seq'[tiab] OR "
+        "'RNA sequencing'[tiab] OR 'RNA-sequencing'[tiab] OR "
+        "'RNAseq'[tiab] OR 'RNA seq'[tiab]"
+        ")"
+    ),
+    "scRNA-seq": (
+        "("
+        "'single-cell RNA-seq'[tiab] OR 'single cell RNA-seq'[tiab] OR "
+        "'single-cell RNAseq'[tiab] OR 'single cell RNAseq'[tiab] OR "
+        "'single-cell RNA sequencing'[tiab] OR 'single cell RNA sequencing'[tiab] OR "
+        "'single-cell RNA-sequencing'[tiab] OR 'single cell RNA-sequencing'[tiab] OR "
+        "'scRNA-seq'[tiab] OR 'scRNA-Seq'[tiab] OR 'scRNAseq'[tiab] OR 'scRNA seq'[tiab]"
+        ")"
+    ),
+    "spatial_or_multimodal_integration": (
+        "("
+            "("
+                "'spatial transcriptomics'[tiab] OR 'spatial transcriptomic'[tiab] OR "
+                "'spatial transcriptome'[tiab] OR 'spatial transcriptomes'[tiab] OR "
+                "'spatial RNA-seq'[tiab] OR 'spatial RNA-Seq'[tiab] OR "
+                "'spatial RNAseq'[tiab] OR "
+                "'spatial RNA sequencing'[tiab] OR 'spatial RNA-sequencing'[tiab]"
+            ")"
+        ") OR ("
+            "("
+                "'multi-modal'[tiab] OR 'multimodal'[tiab] OR 'multi modal'[tiab] OR "
+                "'multi-omics'[tiab] OR 'multiomics'[tiab] OR 'multi omics'[tiab]"
+            ") AND ("
+                "'gene expression'[tiab] OR 'gene abundance'[tiab] OR "
+                "'transcript expression'[tiab] OR 'transcript abundance'[tiab] OR "
+                "'isoform expression'[tiab] OR 'isoform abundance'[tiab] OR "
+                "'mRNA expression'[tiab] OR 'mRNA abundance'[tiab] OR "
+                "'gene regulatory network*'[tiab] OR 'GRN'[tiab] OR "
+                "'RNA-seq'[tiab] OR 'RNA-Seq'[tiab] OR "
+                "'RNA sequencing'[tiab] OR 'RNA-sequencing'[tiab] OR 'RNAseq'[tiab] OR 'RNA seq'[tiab] OR "
+                "'transcriptom*'[tiab]"
+            ")"
+        ")"
+    ),
+}
