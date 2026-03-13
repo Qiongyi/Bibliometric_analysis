@@ -71,7 +71,7 @@ tech_total <- tech4 %>%
   summarise(n_tech = sum(n), .groups = "drop")
 
 
-setwd("C:/Users/uqqzhao/UQ/1projects/IMB_group_Palpant/202509_BiB_Perspective/For_rebuttal")
+setwd("C:/Users/uqqzhao/UQ/1projects/IMB_group_Palpant/202509_BiB_Perspective/For_GitHub/Bibliometric_analysis/For_rebuttal")
 
 ### plot stacked area + AI% dashed line (right axis)
 # AI proportion among tech papers
@@ -122,5 +122,5 @@ p1 <- ggplot() +
     plot.title.position = "plot"
   )
 
-ggsave("Fig2a_stacked_area_8Journals.pdf", p1, width = 11, height = 6)
+ggsave("stacked_area_8Journals.pdf", p1, width = 11, height = 6)
 
